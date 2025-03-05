@@ -1,0 +1,37 @@
+.cta-wrapper {
+  border-radius: var(--border-radius);
+  background-color: #edfcf2;
+  padding: var(--space-xxl) var(--space-xxxl);
+
+  & .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    max-width: 480px;
+    margin: 0 auto;
+
+    & p {
+      text-align: center;
+      margin: 0;
+    }
+
+    & .cta-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    & .cta-progress {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Fixel Text";
+  src:
+    url("FixelText-Regular.woff2") format("woff2"),
+    url("FixelText-Regular.woff") format("woff"),
+    local(Arial);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fixel Text";
+  src:
+    url("FixelText-SemiBold.woff2") format("woff2"),
+    url("FixelText-SemiBold.woff") format("woff"),
+    local(Arial);
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fixel Display";
+  src:
+    url("FixelDisplay-SemiBold.woff2") format("woff2"),
+    url("FixelDisplay-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fixel Text";
+  src:
+    url("FixelText-Medium.woff2") format("woff2"),
+    url("FixelText-Medium.woff") format("woff"),
+    local(Arial);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

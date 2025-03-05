@@ -1,0 +1,37 @@
+@import url("./assets/fonts/fonts.css");
+@import url("./variables.css");
+
+body {
+  font-family: var(--font-family-primary), Arial, Helvetica, sans-serif;
+  line-height: 28px;
+  font-size: var(--text-base-size);
+  color: var(--color-text);
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--heading-base-size);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-size: calc(var(--heading-base-size) * 0.75);
+  line-height: 44px;
+  letter-spacing: 0.004em;
+}
+
+#root {
+  padding: 32px 0px;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

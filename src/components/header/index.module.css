@@ -1,0 +1,20 @@
+.header {
+  & .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 48px;
+
+    & .logo {
+      & img {
+        height: 100%;
+      }
+    }
+
+    & .actions {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+  }
+}

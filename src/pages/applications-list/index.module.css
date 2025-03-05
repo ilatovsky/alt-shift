@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+
+  & .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-sm);
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-border);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-border);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  & .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    & .applications-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm);
+      row-gap: var(--space-md);
+    }
+  }
+}
