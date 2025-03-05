@@ -22,11 +22,7 @@ export const api = {
         ...new Set([...api.getApplicationIdsList(), application.id]),
       ]),
     );
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(application);
-      }, 3000);
-    });
+    return application;
   },
 
   deleteApplication: async (applicationId: string) => {

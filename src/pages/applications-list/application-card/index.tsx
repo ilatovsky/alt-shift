@@ -26,6 +26,9 @@ export const ApplicationCard: FC<Props> = ({
       queryClient.invalidateQueries({
         queryKey: ["applications"],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["applicationIdsList"],
+      });
     },
   });
   return (
