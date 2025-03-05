@@ -5,7 +5,7 @@ import CopyIcon from "../../../assets/icons/copy-icon.svg?react";
 import { Application } from "../../../types";
 import styles from "./index.module.css";
 import { TextButton } from "../../../components/text-button";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { api } from "../../../api";
 
 type Props = Pick<
@@ -19,8 +19,14 @@ export const ApplicationCard: FC<Props> = ({
   companyName,
   applicationText,
 }) => {
+  const queryClient = useQueryClient();
   const { mutate: deleteApplication } = useMutation({
     mutationFn: api.deleteApplication,
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["applications"],
+      });
+    },
   });
   return (
     <article className={styles["application-card"]}>
@@ -31,7 +37,7 @@ export const ApplicationCard: FC<Props> = ({
       >
         <p>
           {applicationText.split("\n").map((paragraph, index) => (
-            <Fragment key={paragraph}>
+            <Fragment key={index}>
               {index !== 0 ? <br /> : null}
               {paragraph}
             </Fragment>
@@ -39,7 +45,11 @@ export const ApplicationCard: FC<Props> = ({
         </p>
       </Link>
       <span className={styles.actions}>
-        <TextButton onClick={() => deleteApplication(id)}>
+        <TextButton
+          onClick={() => {
+            deleteApplication(id);
+          }}
+        >
           <TrashIcon height={20} />
           Delete
         </TextButton>

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  animation: jump 1.5s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-16px);
+    opacity: 0.5;
+  }
+}

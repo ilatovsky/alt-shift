@@ -60,4 +60,17 @@ export const api = {
     );
     return applications.filter((application) => application !== null);
   },
+
+  generateApplicationText: async (
+    application: Pick<
+      Application,
+      "companyName" | "jobTitle" | "goodAt" | "additionalDetails"
+    >,
+  ) => {
+    const response = await fetch("/api/generate-application-text", {
+      method: "POST",
+      body: JSON.stringify(application),
+    });
+    return response.text();
+  },
 };
