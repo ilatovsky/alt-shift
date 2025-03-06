@@ -1,13 +1,34 @@
 .header {
+  @media (max-width: 1280px) {
+    padding: var(--space-lg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+  }
+
   & .nav {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     height: 48px;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      gap: var(--space-md);
+    }
+
     & .logo {
       & img {
         height: 100%;
+      }
+      @media (max-width: 768px) {
+        align-self: center;
+        & img {
+          height: 48px;
+        }
       }
     }
 
@@ -15,6 +36,12 @@
       display: flex;
       gap: 24px;
       align-items: center;
+
+      @media (max-width: 768px) {
+        & a {
+          display: none;
+        }
+      }
     }
   }
 }
