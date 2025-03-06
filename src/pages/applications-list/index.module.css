@@ -14,6 +14,12 @@
     padding-bottom: var(--space-sm);
     position: relative;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-sm);
+    }
+
     &::after {
       content: "";
       display: block;
