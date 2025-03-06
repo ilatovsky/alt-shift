@@ -6,4 +6,25 @@
   font-size: 14px;
   line-height: 20px;
   color: #344054;
+
+  & textarea,
+  & input {
+    &:focus-visible {
+      outline: 4px solid #d3f8df;
+      border-color: #73e2a3;
+    }
+  }
+
+  &[data-error="true"] {
+    & textarea,
+    & input {
+      &:focus-visible {
+        outline: 4px solid #fee4e2;
+        border-color: #f04438;
+      }
+    }
+    & .hint {
+      color: #f04438;
+    }
+  }
 }

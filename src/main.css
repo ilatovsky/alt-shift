@@ -24,7 +24,7 @@ h1 {
 h2 {
   font-size: calc(var(--heading-base-size) * 0.75);
   line-height: 44px;
-  letter-spacing: 0.004em;
+  letter-spacing: 0.006em;
 }
 
 #root {

@@ -57,18 +57,17 @@
       flex: 1 1 0px;
       background-color: #f2f4f7;
       border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      overflow: scroll;
+      position: relative;
 
       & .preview-content {
+        height: 100%;
+        overflow: scroll;
         white-space: pre-wrap;
         margin: 0;
-        flex: 1 1 0px;
         padding: 24px;
         font-size: 18px;
         line-height: 28px;
+        box-sizing: border-box;
         color: #667085;
       }
 
@@ -76,6 +75,15 @@
         display: flex;
         justify-content: end;
         padding: 24px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          var(--color-backround-common) 80%
+        );
       }
     }
   }

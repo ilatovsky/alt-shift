@@ -1,13 +1,12 @@
 import { FC, Fragment } from "react";
 import { Link } from "wouter";
 import TrashIcon from "../../../assets/icons/trash-icon.svg?react";
-import CopyIcon from "../../../assets/icons/copy-icon.svg?react";
 import { Application } from "../../../types";
 import styles from "./index.module.css";
 import { TextButton } from "../../../components/text-button";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { api } from "../../../api";
-
+import { CopyToClipboardButton } from "../../../components/CopyToClipboardButton";
 type Props = Pick<
   Application,
   "id" | "jobTitle" | "companyName" | "applicationText"
@@ -39,12 +38,15 @@ export const ApplicationCard: FC<Props> = ({
         alt={`Application for ${jobTitle} at ${companyName}`}
       >
         <p>
-          {applicationText.split("\n").map((paragraph, index) => (
-            <Fragment key={index}>
-              {index !== 0 ? <br /> : null}
-              {paragraph}
-            </Fragment>
-          ))}
+          {applicationText
+            .split("\n")
+            .filter(Boolean)
+            .map((paragraph, index) => (
+              <Fragment key={index}>
+                {index !== 0 ? <span /> : null}
+                {paragraph}
+              </Fragment>
+            ))}
         </p>
       </Link>
       <span className={styles.actions}>
@@ -56,10 +58,7 @@ export const ApplicationCard: FC<Props> = ({
           <TrashIcon height={20} />
           Delete
         </TextButton>
-        <TextButton>
-          Copy to clipboard
-          <CopyIcon height={20} />
-        </TextButton>
+        <CopyToClipboardButton text={applicationText} />
       </span>
     </article>
   );
