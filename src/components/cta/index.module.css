@@ -3,6 +3,10 @@
   background-color: #edfcf2;
   padding: var(--space-xxl) var(--space-xxxl);
 
+  @media (max-width: 1024px) {
+    padding: var(--space-md);
+  }
+
   & .cta {
     display: flex;
     flex-direction: column;
