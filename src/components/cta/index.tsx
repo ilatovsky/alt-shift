@@ -31,7 +31,7 @@ export const Cta: FC<Props> = ({ targetCount }) => {
         <div className={styles["cta-content"]}>
           <h2>Hit your goal</h2>
           <p>
-            Generate and send out couple more job applications today to get
+            Generate and send out couple more job applications today to get
             hired faster
           </p>
           <Link to={inject(paths.applications.view, { id: nanoid() })} asChild>

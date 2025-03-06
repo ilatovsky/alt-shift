@@ -7,6 +7,7 @@ import { FormControl } from "../../components/form-control";
 import { Input } from "../../components/input";
 import { Textarea } from "../../components/textarea";
 import LoadingIcon from "../../assets/icons/loading-icon.svg?react";
+import RepeatIcon from "../../assets/icons/repeat-icon.svg?react";
 
 interface Props {
   updateApplicationTitle: (title: string) => void;
@@ -111,9 +112,15 @@ export const ApplicationForm: FC<Props> = ({
       <Button
         size="large"
         type="submit"
+        variant={getValues("applicationText") ? "outlined" : "regular"}
         disabled={!formState.isValid || formState.isSubmitting}
       >
-        {formState.isSubmitting ? <LoadingIcon height={24} /> : "Generate Now"}
+        {formState.isSubmitting && <LoadingIcon height={24} />}
+        {!formState.isSubmitting && getValues("applicationText") && (
+          <RepeatIcon height={24} />
+        )}
+        {!formState.isSubmitting &&
+          (getValues("applicationText") ? "Try Again" : "Generate Now")}
       </Button>
     </form>
   );

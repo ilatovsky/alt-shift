@@ -1,8 +1,12 @@
 .container {
   display: flex;
-  gap: 32px;
+  gap: 48px;
   align-items: stretch;
   flex-direction: column;
+
+  @media (max-width: 1280px) {
+    padding: var(--space-lg);
+  }
 
   .application {
     display: flex;
@@ -10,6 +14,11 @@
     height: 600px;
     & > * {
       flex: 1 1 0px;
+    }
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      height: auto;
     }
 
     & .application-form {
@@ -46,6 +55,9 @@
         & .row {
           display: inline-flex;
           gap: 16px;
+          @media (max-width: 1280px) {
+            flex-direction: column;
+          }
           & > * {
             flex: 1;
           }
@@ -58,6 +70,10 @@
       background-color: #f2f4f7;
       border-radius: 12px;
       position: relative;
+
+      @media (max-width: 1280px) {
+        min-height: 400px;
+      }
 
       & .preview-content {
         height: 100%;
