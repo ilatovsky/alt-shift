@@ -56,6 +56,7 @@ export const Application: FC = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, form.reset]);
+
   const applicationText = useWatch({
     control: form.control,
     name: "applicationText",

@@ -1,5 +1,5 @@
 import { FC, useCallback } from "react";
-import { Controller, useFormContext } from "react-hook-form";
+import { Controller, useFormContext, useWatch } from "react-hook-form";
 import { Application } from "../../types";
 import styles from "./index.module.css";
 import { Button } from "../../components/button";
@@ -35,6 +35,11 @@ export const ApplicationForm: FC<Props> = ({
     },
     [getValues, updateApplicationTitle],
   );
+
+  const applicationText = useWatch({
+    control,
+    name: "applicationText",
+  });
 
   return (
     <form className={styles.form} onSubmit={submitHandler}>
@@ -116,11 +121,11 @@ export const ApplicationForm: FC<Props> = ({
         disabled={!formState.isValid || formState.isSubmitting}
       >
         {formState.isSubmitting && <LoadingIcon height={24} />}
-        {!formState.isSubmitting && getValues("applicationText") && (
+        {!formState.isSubmitting && applicationText && (
           <RepeatIcon height={24} />
         )}
         {!formState.isSubmitting &&
-          (getValues("applicationText") ? "Try Again" : "Generate Now")}
+          (applicationText ? "Try Again" : "Generate Now")}
       </Button>
     </form>
   );
