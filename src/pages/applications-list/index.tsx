@@ -19,7 +19,7 @@ export const ApplicationsList: FC = () => {
   });
 
   return (
-    <main className={styles.container}>
+    <main className={styles.container} data-empty={!applications.length}>
       <title>Alt+Shift - Your Applications</title>
       <header className={styles.header}>
         <h1>Applications</h1>
@@ -31,11 +31,13 @@ export const ApplicationsList: FC = () => {
         </Link>
       </header>
       <div className={styles.content}>
-        <section className={styles["applications-grid"]}>
-          {applications.map((application) => (
-            <ApplicationCard key={application.id} {...application} />
-          ))}
-        </section>
+        {!!applications.length && (
+          <section className={styles["applications-grid"]}>
+            {applications.map((application) => (
+              <ApplicationCard key={application.id} {...application} />
+            ))}
+          </section>
+        )}
         <Cta targetCount={APPLICATIONS_TARGET_COUNT} />
       </div>
     </main>
