@@ -6,6 +6,10 @@ body {
   line-height: 28px;
   font-size: var(--text-base-size);
   color: var(--color-text);
+  @media (max-width: 768px) {
+    line-height: 24px;
+    font-size: calc(var(--text-base-size) * 0.8);
+  }
 }
 
 h1,
