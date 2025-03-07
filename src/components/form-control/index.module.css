@@ -15,6 +15,10 @@
     }
   }
 
+  & .hint {
+    color: #475467;
+  }
+
   &[data-error="true"] {
     & textarea,
     & input {
