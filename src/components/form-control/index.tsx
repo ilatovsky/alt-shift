@@ -16,7 +16,7 @@ export const FormControl: FC<PropsWithChildren<Props>> = ({
 }) => {
   return (
     <label className={styles.container} style={style} data-error={!!error}>
-      {label}
+      <span>{label}</span>
       {children}
       {hint && <span className={styles.hint}>{hint}</span>}
     </label>

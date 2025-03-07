@@ -22,11 +22,12 @@ export const Progress: FC = () => {
       <span>
         {`${applicationsCount}/${APPLICATIONS_TARGET_COUNT} applications generated`}
       </span>
-      <Steps
-        targetCount={APPLICATIONS_TARGET_COUNT}
-        currentCount={applicationsCount}
-      />
-      {applicationsCount === APPLICATIONS_TARGET_COUNT && (
+      {applicationsCount < APPLICATIONS_TARGET_COUNT ? (
+        <Steps
+          targetCount={APPLICATIONS_TARGET_COUNT}
+          currentCount={applicationsCount}
+        />
+      ) : (
         <CheckIcon height={28} />
       )}
     </span>

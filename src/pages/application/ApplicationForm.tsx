@@ -120,9 +120,11 @@ export const ApplicationForm: FC<Props> = ({
         variant={getValues("applicationText") ? "outlined" : "regular"}
         disabled={!formState.isValid || formState.isSubmitting}
       >
-        {formState.isSubmitting && <LoadingIcon height={24} />}
+        {formState.isSubmitting && (
+          <LoadingIcon height={24} style={{ margin: "2px 0px" }} />
+        )}
         {!formState.isSubmitting && applicationText && (
-          <RepeatIcon height={24} />
+          <RepeatIcon height={24} style={{ margin: "2px 0px" }} />
         )}
         {!formState.isSubmitting &&
           (applicationText ? "Try Again" : "Generate Now")}
