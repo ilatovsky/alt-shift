@@ -76,7 +76,8 @@
       }
 
       & .preview-content {
-        height: 100%;
+        position: absolute;
+        inset: 0;
         overflow: scroll;
         white-space: pre-wrap;
         margin: 0;
