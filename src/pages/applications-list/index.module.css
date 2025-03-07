@@ -4,7 +4,7 @@
   gap: var(--space-md);
 
   @media (max-width: 1280px) {
-    padding: 0 var(--space-lg);
+    padding: 0 var(--space-lg) var(--space-lg);
   }
 
   & .header {
