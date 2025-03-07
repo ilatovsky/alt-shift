@@ -38,9 +38,7 @@
       align-items: center;
 
       @media (max-width: 768px) {
-        & a {
-          display: none;
-        }
+        flex-direction: row-reverse;
       }
     }
   }
