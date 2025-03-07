@@ -20,7 +20,7 @@ export const Progress: FC = () => {
       }}
     >
       <span>
-        {`${applicationsCount}/${APPLICATIONS_TARGET_COUNT} applications generated`}
+        {`${Math.min(applicationsCount, APPLICATIONS_TARGET_COUNT)}/${APPLICATIONS_TARGET_COUNT} applications generated`}
       </span>
       {applicationsCount < APPLICATIONS_TARGET_COUNT ? (
         <Steps
