@@ -1,0 +1,9 @@
+.container {
+  display: inline-flex;
+}
+
+.step {
+  height: 8px;
+  border-radius: 8px;
+  background-color: var(--color-text-heading);
+}

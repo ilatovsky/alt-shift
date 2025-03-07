@@ -1,21 +1,21 @@
 .container {
   position: relative;
   display: block;
-  padding: 0px 8px;
-  border-radius: 6px;
-  border: 1px solid #d0d5dd;
-  box-shadow: 0px 1px 2px 0px #1018280d;
+  padding: 0px var(--space-xs);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-gray-300);
+  box-shadow: var(--shadow-sm);
 
   *[data-error="true"]:has(> &) & {
-    border-color: #fda29b;
+    border-color: var(--color-error);
   }
 
   &:focus-within {
-    border-color: #73e2a3;
-    outline: 4px solid #d3f8df;
+    border-color: var(--color-success);
+    outline: 4px solid var(--color-success-light);
 
     *[data-error="true"]:has(> &) & {
-      outline: 4px solid #fee4e2;
+      outline: 4px solid var(--color-error-light);
     }
   }
 }

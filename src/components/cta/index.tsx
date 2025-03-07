@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "wouter";
 import { Button } from "../button";
-import { Steps } from "../Steps";
+import { Steps } from "../steps";
 import styles from "./index.module.css";
 import PlusIcon from "../../assets/icons/plus-icon.svg?react";
 import { useQuery } from "@tanstack/react-query";

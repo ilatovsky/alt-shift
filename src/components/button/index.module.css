@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  border: none;
+  gap: var(--space-xs);
+  border: 1px solid;
   padding: 9px 17px;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -13,9 +13,8 @@
   font-weight: 600;
   font-size: var(--text-button-label-size);
   line-height: 24px;
-  transition: background-color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
-  border: 1px solid;
+  transition: var(--transition-base);
+  transition-property: background-color, color, border-color;
 
   &:disabled {
     cursor: not-allowed;
@@ -23,36 +22,39 @@
 
   &[data-size="large"] {
     padding: 15px 27px;
-    font-size: 18px;
+    font-size: var(--text-base-size);
     line-height: 28px;
 
     gap: 12px;
   }
 
   &[data-variant="regular"] {
-    color: #fff;
+    color: var(--color-white);
     background-color: var(--color-primary);
     border-color: var(--color-primary);
+
     & svg path {
-      stroke: #fff;
+      stroke: var(--color-white);
     }
+
     &:disabled {
-      background-color: #d0d5dd;
-      border-color: #d0d5dd;
-      color: #98a2b3;
+      background-color: var(--color-gray-300);
+      border-color: var(--color-gray-300);
+      color: var(--color-gray-400);
+
       & svg path {
-        stroke: #98a2b3;
+        stroke: var(--color-gray-400);
       }
     }
   }
 
   &[data-variant="outlined"] {
     background-color: transparent;
-    color: #344054;
-    border: 1px solid #d0d5dd;
+    color: var(--color-gray-700);
+    border-color: var(--color-gray-300);
 
     & svg path {
-      stroke: #344054;
+      stroke: var(--color-gray-700);
     }
 
     &:disabled {

@@ -3,17 +3,17 @@
   flex-direction: column;
   font-weight: 500;
   gap: 6px;
-  font-size: 14px;
+  font-size: var(--text-small-size);
   line-height: 20px;
-  color: #344054;
+  color: var(--color-gray-700);
 
   & > .hint {
-    color: #475467;
+    color: var(--color-gray-600);
   }
 
   &[data-error="true"] {
     & > .hint {
-      color: #f04438;
+      color: var(--color-text-error);
     }
   }
 }

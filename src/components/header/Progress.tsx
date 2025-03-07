@@ -1,9 +1,10 @@
-import { Steps } from "../Steps";
+import { Steps } from "../steps";
 import { FC } from "react";
 import CheckIcon from "../../assets/icons/check-icon.svg?react";
 import { APPLICATIONS_TARGET_COUNT } from "../../constants";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../../api";
+
 export const Progress: FC = () => {
   const { data: applicationsCount = 0 } = useQuery({
     queryKey: ["applicationIdsList"],

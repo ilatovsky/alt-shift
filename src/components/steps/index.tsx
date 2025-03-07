@@ -1,4 +1,5 @@
 import { FC } from "react";
+import styles from "./index.module.css";
 
 interface Props {
   targetCount: number;
@@ -14,15 +15,13 @@ export const Steps: FC<Props> = ({
   stepsGap = 4,
 }) => {
   return (
-    <span style={{ display: "inline-flex", gap: stepsGap }}>
+    <span className={styles.container} style={{ gap: stepsGap }}>
       {Array.from({ length: targetCount }).map((_, index) => (
         <span
           key={index}
+          className={styles.step}
           style={{
-            height: 8,
             width: stepWidth,
-            borderRadius: 8,
-            backgroundColor: "#101828",
             opacity: index < currentCount ? 1 : 0.24,
           }}
         />
