@@ -1,9 +1,9 @@
 import { FC } from "react";
-import homeIconUrl from "../../assets/icons/home-icon.svg";
+import HomeIconSvg from "../../assets/icons/home-icon.svg?react";
 import styles from "./index.module.css";
 
 export const HomeIcon: FC = () => (
   <span className={styles.container}>
-    <img className={styles.icon} height={20} width={20} src={homeIconUrl} />
+    <HomeIconSvg height={20} />
   </span>
 );
