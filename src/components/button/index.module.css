@@ -38,6 +38,7 @@
     }
     &:disabled {
       background-color: #d0d5dd;
+      border-color: #d0d5dd;
       color: #98a2b3;
       & svg path {
         stroke: #98a2b3;
