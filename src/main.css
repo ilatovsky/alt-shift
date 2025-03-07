@@ -22,13 +22,13 @@ h2 {
 h1 {
   font-size: var(--heading-base-size);
   line-height: 1.25;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.5px;
 }
 
 h2 {
-  font-size: calc(var(--heading-base-size) * 0.75);
   line-height: 44px;
-  letter-spacing: 0.006em;
+  letter-spacing: 0.35px;
+  font-size: calc(var(--heading-base-size) * 0.75);
 }
 
 #root {
