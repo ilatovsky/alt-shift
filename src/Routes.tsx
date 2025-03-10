@@ -2,6 +2,7 @@ import { FC, lazy, Suspense } from "react";
 import { Switch, Route, Redirect, Router } from "wouter";
 import { paths } from "./paths";
 import { ScrollToTop } from "./components/ScrollToTop";
+import LoadingIcon from "./assets/icons/loading-icon.svg?react";
 
 // Lazy load components
 const Application = lazy(() =>
@@ -18,7 +19,7 @@ const ApplicationsList = lazy(() =>
 export const Routes: FC = () => (
   <Router>
     <ScrollToTop />
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingIcon height={32} />}>
       <Switch>
         <Route path="/">
           <Redirect to={paths.applications.list} />
